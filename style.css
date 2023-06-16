@@ -89,3 +89,37 @@ body {
 #btn:hover {
   background-color: aquamarine;
 }
+
+.menu-container{
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff  ;
+  padding: 100px;
+  border-radius: 20px;
+}
+.inputMenu{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 50px;
+}
+#text-Menu{
+ display: flex;
+  padding: 15px 30px;
+  border-radius: 20px;
+  background-color: transparent;
+}
+#btn-menu{
+  display: flex;
+  border-radius: 20px;
+  padding: 10px;
+}
+h3{
+  font-size: 20pt;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: black;
+}
