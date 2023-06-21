@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  color: #752121;
 }
 body {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -97,3 +98,7 @@ align-items: baseline;
  
 }
 
+#cadastro{
+  text-decoration: none;
+  color: #752121;
+}
