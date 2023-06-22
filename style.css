@@ -4,8 +4,9 @@
   color: #752121;
 }
 body {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, 'Arial Narrow Bold', sans-serif;
   height: 100vh;
+
   background: #752121;
 }
 .header {
