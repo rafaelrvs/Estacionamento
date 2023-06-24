@@ -1,22 +1,13 @@
 let modeloCadastro = document.getElementById('inputModelo-cadastro').value
 let placaCadastro = document.getElementById('input-text-placa-cadastro').value
 let timeCadastro = document.getElementById('time-cadastro').value
-const{client} = require('pg')
-
-const client = new Client({
-  user:'postgres',
-  host:'localhost',
-  database:'Estacionamento',
-  password:'*******',
-  port:****,
-});
-
-clien.connect().then(()=>{
-  console.log('conexão ok')
-  return client.query('SELECT * FROM ')
-})
+let dataAtual = new Date();
+let horaAtual = dataAtual.getHours();
+let minutosAtuais = dataAtual.getMinutes();
+let segundosAtuais = dataAtual.getSeconds();
 
 
+let estadia = timeCadastro - dataAtual; 
 
 
 
@@ -57,5 +48,14 @@ function validarPlaca(placa) {
 }
 function estacionamentoAtivo(){
 
+
   
+}
+function gerarNumeroRandomico() {
+  return Math.random();
+}
+function register(){
+  alert(estadia)
+
+
 }
