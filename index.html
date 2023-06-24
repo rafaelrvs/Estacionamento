@@ -1,45 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Menu</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    }
+    body{
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+    main{
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: flex-end;
+      justify-content: center;
+      background-color: aquamarine;
+      padding: 25px;
+      border-radius: 25px;    }
+    #container{
+      display: flex;
+      gap: 20px;
+      flex-direction: column;
+    }
+    #text-input{
+      background-color:white;
+      padding: 20px 50px;
+      border-radius: 25px;
+      
+    }
+    #btn{
+      padding: 15px;
+      border-radius: 25px;
+      background-color:white;
+    }
+    #btn:hover{
+      background-color: aqua;
+    }
+  </style>
+  <title>Estacionamento</title>
 </head>
 <body>
-  <header class="header">
-    <h1 id="title">Estacionamento</h1>
-  </header>
-  <br>
-  <main class="main">
-    <div class="container-itens">
-      <div class="boxs">
-
-        <div id="box1">
-  
-        </div>
-        <div id="box2">
-          <div class="text-and-input">
-            <div id="lineMenu">
-              <p id="textModelo">Modelo</p>
-              <a id="cadastro" href="/cadastro.html">Cadastro</a>
-            </div>
-            <input id="inputModelo" type="text" placeholder="Digite o modelo">
-            
-          </div>
-          <div class="placa-e-texto">
-
-            <p id="placa">Placa</p>
-            <input id="input-text-placa" type="text" placeholder="Digite a placa">
-            <input id="btn" type="button" value="Pesquisar" onclick="openApp()">
-          </div>
-  
-        </div>   
-      </div>
-      <div>
-      </div>
+  <main>
+    <div id="container">
+      <h1>Estacionamento</h1>
+      <input id="text-input" type="text" placeholder="Digite o codigo">
+      <input id="btn" type="button" value="Continuar">
     </div>
+    <nav>
+      <link rel="stylesheet" href="">Cadastre-se
+    </nav>
   </main>
+  
 </body>
-<script src="/Estacionamento.js"></script>
+<script src="script.js"></script>
 </html>
