@@ -1,0 +1,12 @@
+{
+  "name": "estacionamento",
+  "version": "1.0.0",
+  "description": "Criação de um sistema de estacionamento com interface. o modelo construído deve obter o modelo e a placa do carro, o mesmo deve calcular quanto tempo o carro permaneceu estacionado e cobrar  o valor proporcional.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rafael",
+  "license": "ISC",
+  "type":"module"
+}
