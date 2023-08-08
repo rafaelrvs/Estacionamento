@@ -1,5 +1,11 @@
 import {EstacionamentoDeAutomovel} from "./EstacionamentoDeAutomovel.js";
 
+
+/*Você pode criar uma conexão com o PostgreSQL 
+usando um cliente ou um pool de 
+conexões.
+Um pool de conexões é recomendado para aplicativos que precisam de várias
+conexões simultâneas ao banco de dados.*/
 const btnCadastro = document.querySelector("#btn-cadastro")
 
 
@@ -22,5 +28,11 @@ function cadastrandoAutomovel(){
   
   // Armazenar o objeto no localStorage
   localStorage.setItem("cliente", clienteString);
-  console.log(localStorage)
+
+
+
+  console.log(clienteString)
+
+
+
 }

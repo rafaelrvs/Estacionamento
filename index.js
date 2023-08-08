@@ -5,6 +5,7 @@ btnLogin.addEventListener("click", () => {
   const codigo = document.querySelector("#text-input").value
   if(validacao(codigo)){
     alert('existe')
+
   }
   else{
     alert('Não existe')

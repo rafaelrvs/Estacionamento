@@ -1,15 +1,13 @@
 export class EstacionamentoDeAutomovel{
 
   static numeroDeCarros = 0;
-  _placa;
-  _modelo;
-  _tempo;
   
   constructor(novaPlaca, novoModelo,novoTempo){
     this._placa = novaPlaca;
     this._modelo = novoModelo;
     this._tempo = novoTempo
     EstacionamentoDeAutomovel.numeroDeCarros += 1;
+    
   }
   get placa(){
 
