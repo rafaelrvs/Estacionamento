@@ -13,8 +13,8 @@ const Form =()=>{
         <input id="placa" type="text" placeholder="Digite a placa" maxLength={7} required/>
         </div>
         <div className="containerBtn">
-           <input type="submit" value="pesquisar"/>  
-           <input type="button" value="cadastrar"/>
+           <input id="pesquisa" type="submit" value="Pesquisar"/>  
+           <input id="cadastro" type="submit" value="Cadastrar"/>
         </div>
       </form>
     </div>

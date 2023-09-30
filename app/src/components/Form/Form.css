@@ -3,11 +3,11 @@
 }
 .containerFormFundo{
   position: absolute;
-  top: 49%;
+  top: 46%;
   left: 49%;
   transform: translate(-50%, -50%);
   height: 130px;
-  width: 270px;
+  width: 280px;
   box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.233);
   background-color: #ffffff63;
 }
@@ -46,4 +46,5 @@
 .containerBtn{
   display: flex;
   justify-content: space-around;
+  margin-top: 15px;
 }
