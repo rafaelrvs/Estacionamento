@@ -1,24 +1,49 @@
-.containerForm{
-  position: fixed;
-  margin-top: 10px;
-  background-color: #ffffff48;
-
+.container__main__form{
+  
 }
-#form__container{
+.containerFormFundo{
+  position: absolute;
+  top: 49%;
+  left: 49%;
+  transform: translate(-50%, -50%);
+  height: 130px;
+  width: 270px;
+  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.233);
+  background-color: #ffffff63;
+}
+.container__main__form #form__container{
   display: flex;
   flex-direction: column;
   gap: 10px;
   background-color: var(--cor__form);
-  width: auto;
-  align-items: start;
-  z-index: 2;
-}
-#form__container #input{
-  margin-top: 10px;
   padding: 15px;
-  
+  width: 250px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
-#form__container label{
-  margin: 10px;
-  
+.container__main__form input{
+ background-color: rgba(128, 128, 128, 0.328);
+ cursor: pointer;
+}
+.container__main__form #modelo{
+  width: 200px;
+  border:  none;
+  padding: 5px;
+}
+.container__main__form #placa{
+  border:  none;
+  padding: 5px;
+}
+.container__main__form label{
+  font-weight: 500px;
+}
+.placaEmodelo{
+  display: flex;
+  justify-content: space-around;
+}
+.containerBtn{
+  display: flex;
+  justify-content: space-around;
 }
