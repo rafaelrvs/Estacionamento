@@ -11,7 +11,7 @@ const dbConfig = {
 
 const pool = new Pool(dbConfig);
 
-pool.query('SELECT * FROM sua_tabela', (error, results) => {
+pool.query('SELECT * FROM Estacionamento', (error, results) => {
   if (error) {
     console.error('Erro ao executar a consulta:', error);
   } else {
