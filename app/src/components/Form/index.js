@@ -1,42 +1,54 @@
-import React, { useState } from 'react';
-import './Form.css';
-import { aactiveServer } from '../Service/controllers/server';
-
+import React, { useState } from "react";
+import "./Form.css";
+import { Usuario } from "../controller/Usuario";
 const Form = () => {
-  const [placaSelecionada, setPlacaSelecionada] = useState('');
-  const [modeloSelecionado, setModeloSelecionado] = useState('');
-
+  const [placaSelecionada, setPlacaSelecionada] = useState("");
+  const [modeloSelecionado, setModeloSelecionado] = useState("");
+  const listaVeiculo = ['']
+  //Selecionando modelo do carro
   const handlerInputModel = (event) => {
     const valorinserido = event.target.value;
     setModeloSelecionado(valorinserido);
     event.preventDefault();
   };
-
+  //selecionando placa do automovel
   const handlerInputPlaca = (event) => {
     const valorinserido = event.target.value;
     setPlacaSelecionada(valorinserido);
     event.preventDefault();
   };
-
+  //consulta de altomovel
   const handlerSearch = (event) => {
-   
+    listaVeiculo.forEach((e) => {
+     alert(e.toLowerCase());
+    });
     event.preventDefault();
   };
-  const handlerInsertValue = (event) => {
+  
+  //cadastrando veiculo
+  const handlerCadastro = (event) => {
+    var dataAtual = new Date();
+    // Obtenha a hora, minutos e segundos
+    var horas = dataAtual.getHours();
+    var minutos = dataAtual.getMinutes();
+    var segundos = dataAtual.getSeconds();
+  
+    const timeNow = `${horas} + ${minutos} + ${segundos}`
+    const automovelGuardado = new Usuario();
+    automovelGuardado.setModelo = modeloSelecionado;
+    automovelGuardado.setPlaca = placaSelecionada;
+    automovelGuardado.setHota = timeNow;
+    const valueToCar = (automovelGuardado.getPlaca(), automovelGuardado.getModelo(), automovelGuardado.getHora());
+    listaVeiculo.push(valueToCar);
+    
     
     event.preventDefault();
   };
-  
-  const handlerCadastro = (event) => {
-    event.preventDefault();
-
-  };
-  
 
   return (
     <div className="container__main__form">
       <div className="containerFormFundo"></div>
-      <form id="form__container" onSubmit={handlerInsertValue}>
+      <form id="form__container">
         <label htmlFor="modelo">Modelo</label>
         <input
           id="modelo"
@@ -59,8 +71,18 @@ const Form = () => {
           />
         </div>
         <div className="containerBtn">
-          <input id="pesquisa" type="submit" value="Pesquisar" onClick={handlerSearch} />
-          <input id="cadastro" type="button" value="Cadastrar" onClick={handlerCadastro} />
+          <input
+            id="pesquisa"
+            type="submit"
+            value="Pesquisar"
+            onClick={handlerSearch}
+          />
+          <input
+            id="cadastro"
+            type="button"
+            value="Cadastrar"
+            onClick={handlerCadastro}
+          />
         </div>
       </form>
     </div>
