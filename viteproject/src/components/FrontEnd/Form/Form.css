@@ -1,0 +1,47 @@
+.containerForm h1{
+  position: fixed;
+  top: 10%;
+  left: 20%;
+  color: #fff;
+  transform: translate(-50%,-50%);
+  font-weight: 500;
+  font-size: 25pt;
+  margin: 10px;
+
+}
+@media(max-width:500px) {
+  .containerForm h1 {
+    left: 47%;
+  }
+}
+.containerForm #shadow{
+  position: fixed;
+  top: 45%;
+  left: 48%;
+  transform: translate(-50%,-50%);
+  background-color: #ffffff44;
+  width: 230px;
+  height: 180px;
+  z-index: 0;
+  box-shadow: -5px -5px 15px black;
+  border-radius: 25px;
+}
+.containerForm form{
+  position:fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0px 0px 15px black;
+  background-color: rgb(177, 172, 172);
+  border-radius: 25px;
+  padding: 25px;
+  z-index: 1;
+}
+.containerForm input{
+  cursor: pointer;
+  padding: 10px;
+  border-radius:15px;
+}
