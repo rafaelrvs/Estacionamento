@@ -1,0 +1,11 @@
+.containerTitle p{
+  font-size: 30pt;
+  font-weight: 700px;
+  color: #fff;
+
+}
+.containerTitle{
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
