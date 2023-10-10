@@ -1,12 +1,14 @@
 //______________________ component responsible for the form
 import { useState } from "react";
 import "./Form.css";
+
 import { Usuario } from "../../BackEnd/Usuario/Usuario";
+
 const Form = () => {
  
  const [valueByEnteringOnPlate,setValueByEnteringOnPlate] = useState('')
  const [valueByEnteringOnModel,setValueByEnteringOnModel] = useState('')
- const [insertHours,SetInsertHours] = useState('')
+ const [insertHours,SetInsertHours] = useState()
  const [listOfUSer,setListOfUSer] = useState([])
  const [Estacionamento,setEstacionamento] = useState('Estacionamento')
  
@@ -21,6 +23,8 @@ const handlerInsertingPlate =(event)=>{
 //______________________ inserindo valor do modelo
 const handlerInsertingModel =(event)=>{
   const insertingModel = event.target.value;
+    
+
   setValueByEnteringOnModel(insertingModel);
   event.preventDefault();
   
@@ -28,17 +32,17 @@ const handlerInsertingModel =(event)=>{
 } 
 //______________________ criando objeto
 const handlerInsertingValue = (event)=>{
-  let currentDate = new Date();
-  let currentTime = currentDate.getHours();
-  let currentMinutes = currentDate.getMinutes();
-  let dateNow = (currentDate +":"+ currentTime+":"+currentMinutes);
-  SetInsertHours(dateNow);
+  event.preventDefault()
+ createHours();
   // criando objeto
-  const userOfParking = [ `placa: ${valueByEnteringOnPlate}`+` Modelo do carro: ${valueByEnteringOnModel}`+ ` Horario ${insertHours}`];
-  const user = new Usuario(userOfParking)
+   const automovel = new Usuario(valueByEnteringOnPlate,valueByEnteringOnModel,insertHours)
   
+    automovel.insertVeluAPi(1,valueByEnteringOnPlate,valueByEnteringOnModel)
+  const userOfParking = [ `placa: ${automovel.getPlaca	}`+` Modelo do carro: ${automovel.modelo}`+ ` Horario ${automovel.getHora}`];
   setListOfUSer(userOfParking);
-  event.preventDefault();
+
+
+
 }
 
 function handlerSearch(event) {
@@ -47,12 +51,23 @@ function handlerSearch(event) {
     const parts = element.split(" ");
 
     // Encontre a parte que contém a hora (supondo que seja a última parte)
-    const quantidadeDeHoras = parts[parts.length - 1];
-
-    setEstacionamento(`O ${valueByEnteringOnModel}` + ` entou as : ${quantidadeDeHoras}`);
+    const quantidadeDeHoras = insertHours +  parts[parts.length - 1];
+    const quantidadeDeHorasLimpa = quantidadeDeHoras.replace(/}/g, '')
+    setEstacionamento(`O ${valueByEnteringOnModel}` + ` entou as : ${quantidadeDeHorasLimpa}`);
   });
 
   event.preventDefault();
+}
+
+// criação de horas
+function createHours(){
+  let currentDate = new Date();
+  let dia = currentDate.getDate()
+    let currentTime = currentDate.getHours();
+  let currentMinutes = currentDate.getMinutes();
+  let dateNow = ( "no dia "+dia +" as: "+  currentTime+":"+currentMinutes);
+  SetInsertHours(dateNow);
+
 }
 
   return (
