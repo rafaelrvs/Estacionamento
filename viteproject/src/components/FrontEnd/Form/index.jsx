@@ -38,11 +38,9 @@ const handlerInsertingValue = (event)=>{
    const automovel = new Usuario(valueByEnteringOnPlate,valueByEnteringOnModel,insertHours)
   
     automovel.insertVeluAPi(1,valueByEnteringOnPlate,valueByEnteringOnModel)
+
   const userOfParking = [ `placa: ${automovel.getPlaca	}`+` Modelo do carro: ${automovel.modelo}`+ ` Horario ${automovel.getHora}`];
   setListOfUSer(userOfParking);
-
-
-
 }
 
 function handlerSearch(event) {
